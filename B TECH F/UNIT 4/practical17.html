@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Museum Artifact Interaction</title>
+    <style>
+        #artifact {
+            width: 250px;
+            padding: 15px;
+            border: 2px solid #333;
+            text-align: center;
+            cursor: pointer;
+            background-color: #f1f2f6;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Museum Artifact</h2>
+
+<div id="artifact">
+    Hover or Press "I" key
+</div>
+
+<button id="disableBtn">Disable Interaction</button>
+
+<script>
+    const artifact = document.getElementById("artifact");
+    const disableBtn = document.getElementById("disableBtn");
+
+    // Mouse event function
+    function showInfo() {
+        artifact.innerHTML = "Ancient Sculpture (200 BC)";
+    }
+
+    // Keyboard event function
+    function keyInfo(event) {
+        if (event.key === "i" || event.key === "I") {
+            artifact.innerHTML = "Information shown using keyboard";
+        }
+    }
+
+    // Adding event listeners
+    artifact.addEventListener("mouseover", showInfo);
+    document.addEventListener("keydown", keyInfo);
+
+    // Removing event listeners
+    disableBtn.addEventListener("click", function () {
+        artifact.removeEventListener("mouseover", showInfo);
+        document.removeEventListener("keydown", keyInfo);
+        artifact.innerHTML = "Interaction Disabled";
+    });
+</script>
+
+</body>
+</html>

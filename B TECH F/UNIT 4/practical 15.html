@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Manipulation Demo</title>
+    <style>
+        .shelf {
+            padding: 10px;
+            border: 2px dashed #555;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+
+<h2 id="title">Library Shelf Status</h2>
+
+<div class="shelf">
+    <p class="book">Book Slot: Empty</p>
+</div>
+
+<button onclick="addBook()">Add Book</button>
+<button onclick="removeBook()">Remove Book</button>
+
+<script>
+    function addBook() {
+        // Using getElementById()
+        let heading = document.getElementById("title");
+        heading.innerHTML = " Library Shelf (Updated)";
+
+        // Using querySelector()
+        let bookSlot = document.querySelector(".book");
+        bookSlot.innerHTML = "Book Slot: JavaScript Essentials";
+    }
+
+    function removeBook() {
+        // Using querySelector()
+        let bookSlot = document.querySelector(".book");
+        bookSlot.innerHTML = "Book Slot: Empty";
+
+        // Using getElementById()
+        document.getElementById("title").innerHTML = "Library Shelf Status";
+    }
+</script>
+
+</body>
+</html>

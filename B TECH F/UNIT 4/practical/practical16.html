@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Traffic Signal Panel</title>
+    <style>
+        .off {
+            display: none;
+        }
+
+        .alert {
+            background-color: #ff7675;
+            color: white;
+            padding: 10px;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Traffic Control Message</h2>
+
+<div id="signal" class="alert">
+    STOP! Road Under Repair 
+</div>
+
+<button onclick="toggleSignal()">Toggle Message</button>
+
+<script>
+    function toggleSignal() {
+        let signalBox = document.getElementById("signal");
+
+        // Toggle visibility
+        signalBox.classList.toggle("off");
+
+        // Toggle style
+        signalBox.classList.toggle("alert");
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Train Announcement Board</title>
+    <style>
+        #board {
+            border: 2px solid #444;
+            width: 320px;
+            padding: 10px;
+            font-family: Arial;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Train Announcement Board</h2>
+
+<div id="board"></div>
+
+<button onclick="addAnnouncement()">Add Announcement</button>
+<button onclick="updateAnnouncement()">Update First Announcement</button>
+<button onclick="removeAnnouncement()">Remove Last Announcement</button>
+
+<script>
+    const board = document.getElementById("board");
+
+    // Create & append a new child node
+    function addAnnouncement() {
+        let msg = document.createElement("p");
+        msg.textContent = "Train 12845 arriving at Platform 2";
+        board.appendChild(msg);
+    }
+
+    // Modify an existing child node
+    function updateAnnouncement() {
+        if (board.firstChild) {
+            board.firstChild.textContent = 
+            "Train 12845 delayed by 10 minutes";
+        }
+    }
+
+    // Remove a child node
+    function removeAnnouncement() {
+        if (board.lastChild) {
+            board.removeChild(board.lastChild);
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Canvas Drawing</title>
+</head>
+<body>
+
+<h2>Night Campfire Scene</h2>
+
+<canvas id="camp" width="400" height="300" style="border:1px solid #000;"></canvas>
+
+<script>
+    const canvas = document.getElementById("camp");
+    const ctx = canvas.getContext("2d");
+
+    // Sky
+    ctx.fillStyle = "#0a1a2a";
+    ctx.fillRect(0, 0, 400, 300);
+
+    // Moon
+    ctx.beginPath();
+    ctx.arc(320, 60, 25, 0, 2 * Math.PI);
+    ctx.fillStyle = "#f1f2f6";
+    ctx.fill();
+
+    // Ground
+    ctx.fillStyle = "#2d3436";
+    ctx.fillRect(0, 220, 400, 80);
+
+    // Campfire base (logs)
+    ctx.fillStyle = "#8e5a2b";
+    ctx.fillRect(170, 210, 60, 10);
+    ctx.fillRect(160, 220, 80, 10);
+
+    // Fire (triangle)
+    ctx.beginPath();
+    ctx.moveTo(200, 150);
+    ctx.lineTo(180, 220);
+    ctx.lineTo(220, 220);
+    ctx.closePath();
+    ctx.fillStyle = "#ff9f1a";
+    ctx.fill();
+
+    // Fire inner glow
+    ctx.beginPath();
+    ctx.moveTo(200, 170);
+    ctx.lineTo(190, 215);
+    ctx.lineTo(210, 215);
+    ctx.closePath();
+    ctx.fillStyle = "#ffe66d";
+    ctx.fill();
+</script>
+
+</body>
+</html>

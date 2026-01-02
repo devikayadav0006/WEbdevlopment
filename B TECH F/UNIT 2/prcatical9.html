@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Responsive Web Page Example</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #166cc3;
+    }
+
+    header {
+      background-color: #007bff;
+      color: white;
+      text-align: center;
+      padding: 1.5em 1em;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      background-color: #333;
+    }
+
+    nav a {
+      color: white;
+      padding: 1em;
+      text-decoration: none;
+      text-align: center;
+      border-bottom: 1px solid #444;
+    }
+
+    nav a:hover {
+      background-color: #555;
+    }
+
+    main {
+      padding: 1.5em;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 8px;
+      padding: 1.5em;
+      margin: 1em 0;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+    @media (min-width: 600px) 
+      nav {
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      nav a {
+        flex: 1;
+        border-bottom: none;
+      }
+      nav a:last-child {
+        border-right: none;
+        background-color: rgb(226, 139, 25);
+      }
+      .card {
+        width: 80%;
+        margin: 1.5em auto;
+      }
+    @media (min-width: 900px) {
+      main {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+      .card {
+        width: 45%;
+        margin: 1em;
+      }
+      header {
+        font-size: 2rem;
+      }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Media</h1>
+    <p>Using Media Queries</p>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <main>
+    <div class="card">
+      <h2>Flexible Layout</h2>
+      <p>Media provide news and information on current events, politics, economics, and other topics of public interest.</p>
+    </div>
+
+    <div class="card">
+      <h2>Mobile-First Design</h2>
+      <p>They are used for learning and intellectual discourse through formats like documentaries, educational programs, and books.</p>
+    </div>
+
+    <div class="card">
+      <p>Font and box sizes use <b>em</b>, <b>rem</b>, and <b>vw</b> units for flexibility.</p>
+    </div>
+  </main>
+</body>
+</html>

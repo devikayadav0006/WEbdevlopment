@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS Form Validation</title>
+    <style>
+        body { font-family: Arial; }
+        input { margin: 6px 0; }
+    </style>
+</head>
+<body>
+
+<h2>User Access Form</h2>
+
+<form onsubmit="return validateForm()">
+
+    Username:
+    <input type="text" id="username" oninput="checkUsername()">
+    <br>
+
+    Security PIN:
+    <input type="password" id="pin" oninput="checkPIN()">
+    <br>
+
+    Favorite Color:
+    <input type="text" id="color">
+    <br><br>
+
+    <input type="submit" value="Submit">
+</form>
+
+<script>
+    function checkUsername() {
+        let name = document.getElementById("username").value;
+
+        if (name.length > 0 && name.length < 4) {
+            alert("Username must be at least 4 characters");
+        }
+    }
+
+    function checkPIN() {
+        let pin = document.getElementById("pin").value;
+
+        if (pin.length > 0 && pin.length !== 4) {
+            alert("PIN must be exactly 4 digits");
+        }
+    }
+
+    function validateForm() {
+        let name = document.getElementById("username").value;
+        let pin = document.getElementById("pin").value;
+        let color = document.getElementById("color").value;
+
+        if (name === "") {
+            alert("Username cannot be empty");
+            return false;
+        }
+
+        if (pin === "" || pin.length !== 4) {
+            alert("Enter a valid 4-digit PIN");
+            return false;
+        }
+
+        if (color === "") {
+            alert("Please enter your favorite color");
+            return false;
+        }
+
+        alert("Form submitted successfully!");
+        return true;
+    }
+</script>
+
+</body>
+</html>

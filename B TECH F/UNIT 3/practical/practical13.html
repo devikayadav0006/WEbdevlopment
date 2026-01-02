@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Scope Demo</title>
+</head>
+<body>
+
+<h2>JavaScript User-Defined Functions & Scope</h2>
+
+<button onclick="startProgram()">Run Program</button>
+
+<script>
+    // Global scope
+    var globalVar = "I am VAR (Global)";
+    let globalLet = "I am LET (Global)";
+    const globalConst = "I am CONST (Global)";
+
+    // User-defined function
+    function startProgram() {
+        console.log("=== Inside startProgram() ===");
+
+        console.log(globalVar);
+        console.log(globalLet);
+        console.log(globalConst);
+
+        scopeTest();
+    }
+
+    // Another user-defined function
+    function scopeTest() {
+        console.log("=== Inside scopeTest() ===");
+
+        if (true) {
+            var functionVar = "VAR works inside block";
+            let blockLet = "LET works only inside block";
+            const blockConst = "CONST works only inside block";
+
+            console.log(functionVar);
+            console.log(blockLet);
+            console.log(blockConst);
+        }
+
+        // var is function-scoped
+        console.log(functionVar);
+
+        // Uncommenting below lines will cause ERROR
+        // console.log(blockLet);
+        // console.log(blockConst);
+    }
+</script>
+
+</body>
+</html>
